@@ -27,11 +27,14 @@ public class PsToPdf {
         //Initializing fos
         FileOutputStream fos = null;
         
-        //Pointing to the location of Ghostscript binary to find .dll needed
-        System.setProperty("jna.library.path", "C:\\Program Files (x86)\\gs\\gs9.05\\bin");
+        //Hardcoded path to find .dll needed for testing
+       // System.setProperty("jna.library.path", "C:\\Program Files (x86)\\gs\\gs9.05\\bin");
         
         //Get the absolut path to the folder where the file was executed
         String path=System.getProperty("user.dir");
+        
+        //Pointing that .dll needed is in the working directory
+        System.setProperty("jna.library.path", path+"\\lib");
         
         //Make list of .ps files in the working directory
         File file=new File(path);
