@@ -31,10 +31,17 @@ public class PsToPdf {
        // System.setProperty("jna.library.path", "C:\\Program Files (x86)\\gs\\gs9.05\\bin");
         
         //Get the absolut path to the folder where the file was executed
-        String path=System.getProperty("user.dir");
+        
+        String path="";
+        if (args.length>0){
+            path=args[0];
+        }
+        else {
+            path=System.getProperty("user.dir");
+        }
         
         //Pointing that .dll needed is in the working directory
-        System.setProperty("jna.library.path", path+"\\lib");
+        System.setProperty("jna.library.path", System.getProperty("user.dir")+"\\lib");
         
         //Make list of .ps files in the working directory
         File file=new File(path);
@@ -76,7 +83,7 @@ public class PsToPdf {
             
             //create OutputStream
             fos = new FileOutputStream(new File(name));
- 
+            System.out.println(name);
             //create converter
             PDFConverter converter = new PDFConverter();
  
