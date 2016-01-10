@@ -1,0 +1,46 @@
+Ohjelman psToPdf dokumentaatio
+
+Versio ja tekijä:
+
+versio 1.1 voimassa, tehnyt Janne Hyvönen 10.01.2016
+
+Ohjelman tarkoitus:
+
+Ohjelma lukee siitä kansiosta, jossa psToPdf.jar suoritetaan, kaikki .ps tiedostot
+ja muuttaa ne samannimisiksi .pdf tiedostoiksi samaan kansioon ellei komentorivillä anneta argumenttina polkua toiseen kansioon. Jos argumentti löytyy, niin .ps-tiedostot luetaan polun kansiosta ja .pdf-tiedostot tulostetaan samaan kansioon.
+
+Asentaminen:
+
+Kopioi haluamaasi kansioon psToPdf.jar tiedosto ja lib-kansio. 
+
+Käyttöohje:
+
+Käytettäessä ohjelmaa ilman argumenttia:
+1.)Siirrä muutettavat .ps tiedostot kansioon, jossa psToPdf.jar tiedosto on.
+2.)Tuplaklikkaa psToPdf.jar-tiedostoa, niin ohjelma konvertoi tiedostot.
+3.)Jos .ps tiedoston nimessä on enemmän kuin yksi piste, niin .pdf-tiedoston nimeksi tulee .ps tiedostonimen alkuosa ensimmäiseen pisteeseen saakka.
+
+Käytettäessä ohjelmaa argumentin kanssa:
+1.)Kirjoita komentoriville argumenttina kansiopolku josta .ps-tiedostot luetaan ja johon .pdf-tiedostot kirjoitetaan. Komento on muotoa:
+
+java -jar psToPdf.jar tiedostopolku
+
+esimerkiksi:
+
+java -jar psToPdf.jar c:\kayttaja\Documents\testikansio
+
+
+Riippuvuudet:
+
+1.) Tietokoneella tulee olla JRE (Java Runtime Environment) asennettuna. Asennuksen voi
+tarkastaa ja tarvittaessa asentaa täältä:
+ 
+http://java.com/en/download/
+
+2.)Muut tarvittavat kirjastot ja moduulit löytyvät ohjelman mukana tulleesta lib-kansiosta.
+Katso:
+
+https://drive.google.com/file/d/0BxX76hUYvAsld2RPejVOQU5fSHM/view?usp=sharing
+
+Ohjelma etsii itse kirjastot suorituskansiossa olevata lib-kansiosta. Jos kansiossa jossa .jar-tiedosto  suoritetaan ei ole lib-kansiota tai kansion sisältöä on muutettu, niin ohjelma ei toimi. 
+gsdll32.dll ja gsdll64.dll ovat GhostScriptin mukana tulevia luokkia.
